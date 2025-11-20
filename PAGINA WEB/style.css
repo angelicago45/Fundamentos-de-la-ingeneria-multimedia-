@@ -1,0 +1,333 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .header-img img {
+    width: 100%;
+    height: auto;
+    max-width: 1920px;
+    display: block;
+    
+  }
+  /* CENTRAR NAV COMPLETO */
+  .navbar {
+    background-color: #EADADA;
+    display: flex;
+    justify-content: center;/* centramos horizontalmente */
+    align-items: center;
+    padding: 15px 30px;
+    gap: 100px;/* Reducido para evitar desbordes */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    align-items: center;
+    flex-wrap: wrap; /* Para que se acomode si no hay espacio */
+    
+  
+  }
+  
+  .navbar a i {
+    font-size: 24px;
+    color: #333;
+    transition: color 0.3s;
+  }
+  
+  .navbar a i:hover {
+    color: #ffffff;
+  }
+  .navbar i {
+    font-size: 24px;
+    margin-right: 20px;
+    color: #333;
+    
+  }
+  
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 220px; /*Aumenta o reduce el espacio como quieras */
+    justify-content: center;
+    flex-wrap: wrap;  /* 👈 para que los ítems bajen si no entran */
+    
+   
+   
+  }
+  
+  .navbar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+    display: flex;
+    align-content: center;
+    font-size: 18px; /* Cambia este valor según lo que necesites */
+    white-space: nowrap; /* 👈 evita que el texto se divida en 2 líneas */
+    
+   
+   
+  }
+  
+  .navbar ul li a:hover {
+    color: #fefefe;
+  } /*Cuando pasas el mouse por encima del enlace, cambia a azul.*/
+  
+  .header-img img {
+    width: 100%;
+    max-width: 1920px;
+    height: auto;
+  }
+
+/*sigue el cuerpo*/
+main {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  section {
+    margin-bottom: 60px;
+  }
+  
+  section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  section p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+/* 📱 RESPONSIVE PARA CELULARES */
+@media screen and (max-width: 768px) {
+  .navbar {
+    gap: 40px;
+    padding: 10px 20px;
+  }
+
+  .navbar ul {
+    gap: 30px;
+  }
+
+  .navbar ul li a {
+    font-size: 16px;
+  }
+
+  .navbar a i {
+    font-size: 20px;
+  }
+}
+
+
+#portafolio {
+  width: 100%;
+  height: 400px;         /* Altura deseada */
+
+}
+
+#portafolio video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;         /* Llena todo el espacio sin dejar bordes */
+  border: none !important;   /* Elimina cualquier borde */
+  outline: none !important;  /* Elimina contornos de enfoque */
+  display: block;            /* Elimina espacios blancos extra */
+  background-color: transparent;
+  object-fit: cover;
+
+}
+
+
+   /* foto de angelica */
+
+.info-section {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap; /* Para que sea responsive */
+  font-family: 'Montserrat', sans-serif;
+
+}
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+p, li, a {
+  font-family: 'Poppins', sans-serif;
+}
+.info-section img {
+  width: 400px;
+  max-width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.text-content {
+  flex: 1;
+  min-width: 250px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.info-section {
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  background-color: #f0f0f0;
+}
+
+.info-card {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1000px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text-content {
+  flex: 1;
+  min-width: 280px;
+}
+
+.text-content h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.text-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  font-family: 'Lato', sans-serif;
+}
+
+.slider {
+  flex: 1;
+  min-width: 280px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.slide-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  gap: 20px;
+}
+
+.slide-track img {
+  width: 80px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+button.prev,
+button.next {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  color: #555;
+}
+
+button.prev:hover,
+button.next:hover {
+  color: #000;
+}
+.slide-track img {
+  width: 100px;         /* Puedes aumentar o reducir este valor */
+  height: 100px;        /* Si quieres que todas tengan la misma altura */
+  object-fit: contain;  /* Asegura que no se deformen */
+  margin: 0 10px;       /* Espacio entre imágenes */
+  flex-shrink: 0;       /* Evita que se compriman si no hay espacio */
+}
+
+
+
+
+
+
+
+
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide-window {
+  overflow: hidden;
+  width: 100%;
+}
+
+.slide-track {
+  display: flex;
+  width: calc(100px * 11 * 2); /* 11 imágenes, duplicadas para efecto infinito */
+  animation: scroll 20s linear infinite;
+}
+
+.slide-track img {
+  width: 100px;
+  height: 100px;
+  margin: 0 10px;
+  object-fit: contain;
+}
+
+/* Animación de scroll horizontal */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-60%);
+  }
+}
+
+.buenas{
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap; /* Para que sea responsive */
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+
+
+
+.info-section {
+  display: flex;
+  align-items: center;        /* Centra verticalmente */
+  justify-content: center;    /* Centra horizontalmente */
+  gap: 30px;
+  padding: 40px;
+  flex-wrap: wrap;            /* Para que se acomode en móviles */
+  text-align: center;
+}
+
