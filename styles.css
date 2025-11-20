@@ -1,0 +1,566 @@
+/* --- ESTILO GLOBAL --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(180deg, #e3f2fd, #ffffff);
+  color: #333;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* --- HEADER --- */
+header {
+  position: relative;
+  height: 330px;
+  background: linear-gradient(135deg, #0d2f54, #1e5ea2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
+}
+
+.header-content h1 {
+  font-size: 2.8em;
+  margin-bottom: 10px;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.3);
+}
+
+.header-content p {
+  font-size: 1.2em;
+  opacity: 0.9;
+}
+
+/* === ICONOS FLOTANTES === */
+.floating-icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.icon {
+  position: absolute;
+  font-size: 2.2em;
+  opacity: 0.8;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  animation: flotar 8s ease-in-out infinite;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* Posiciones y tamaños diferentes */
+.icon:nth-child(1) { top: 20%; left: 15%; animation-duration: 9s; }
+.icon:nth-child(2) { top: 50%; left: 75%; animation-duration: 10s; }
+.icon:nth-child(3) { top: 70%; left: 30%; animation-duration: 11s; }
+.icon:nth-child(4) { top: 35%; left: 55%; animation-duration: 12s; }
+.icon:nth-child(5) { top: 10%; left: 85%; animation-duration: 13s; }
+
+/* Movimiento flotante */
+@keyframes flotar {
+  0% { transform: translateY(0) translateX(0) rotate(0deg); }
+  50% { transform: translateY(-20px) translateX(15px) rotate(10deg); }
+  100% { transform: translateY(0) translateX(0) rotate(0deg); }
+}
+
+/* Al pasar el mouse: se mueven más rápido y agrandan */
+header:hover .icon {
+  transform: scale(1.4) rotate(15deg);
+  opacity: 1;
+  animation-duration: 4s;
+}
+
+/* --- NAVEGACIÓN --- */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: white;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 15px 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+nav a {
+  text-decoration: none;
+  background: #1e5ea2;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background: #00c6ff;
+  transform: translateY(-3px);
+}
+
+/* --- SECCIONES --- */
+.concepto {
+  max-width: 900px;
+  margin: 70px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+/* === VIDEO EN SECCIÓN CONCEPTO === */
+.video-container {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.video-container video {
+  width: 100%;
+  max-width:800px;
+  border: radius 200PX;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Efecto al pasar el mouse */
+.video-container video:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+
+#fundamentos {
+  padding: 60px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #e0e7ff, #f5f3ff);
+  border-radius: 20px;
+  max-width: 1200px;
+  margin: 40px auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+#fundamentos h2 {
+  font-size: 2.5rem;
+  color: #4338ca;
+  margin-bottom: 40px;
+}
+
+/* Contenedor */
+.contenedor {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+
+/* Tarjeta */
+.card {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  max-width: 360px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(67, 56, 202, 0.2);
+}
+
+/* Ícono */
+.icono {
+  font-size: 2.5rem;
+  margin-right: 15px;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .icono {
+  transform: rotate(20deg) scale(1.3);
+}
+
+/* Colores de títulos */
+.color1 { color: #ef4444; } /* Rojo */
+.color2 { color: #f59e0b; } /* Amarillo */
+.color3 { color: #10b981; } /* Verde */
+.color4 { color: #3b82f6; } /* Azul */
+.color5 { color: #8b5cf6; } /* Morado */
+.color6 { color: #ec4899; } /* Rosa */
+
+/* Cambio de color al pasar el mouse */
+.card:hover .color1 { color: #f87171; }
+.card:hover .color2 { color: #fbbf24; }
+.card:hover .color3 { color: #34d399; }
+.card:hover .color4 { color: #60a5fa; }
+.card:hover .color5 { color: #a78bfa; }
+.card:hover .color6 { color: #f472b6; }
+
+/* Texto */
+.texto p {
+  color: #374151;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Animación de entrada */
+.card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: aparecer 0.6s forwards;
+}
+
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+.card:nth-child(5) { animation-delay: 0.5s; }
+.card:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Exo:700');
+@import url('https://fonts.googleapis.com/css?family=Abel');
+
+body {
+  background-color: #dfe6e9;
+  font-family: 'Abel', sans-serif;
+}
+
+/* Contenedor principal */
+.cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+/* Tarjetas */
+.card-habilidad {
+  width: 220px;
+  height: 300px;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.6s, box-shadow 0.6s;
+  transform: perspective(800px) rotateX(15deg);
+}
+
+.card-habilidad img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 15px;
+  transition: transform 0.6s;
+}
+
+.card-habilidad h3 {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.card-habilidad p {
+  font-size: 14px;
+  color: #f1f2f6;
+}
+
+/* Hover efecto 3D */
+.card-habilidad:hover {
+  transform: perspective(800px) rotateX(0deg) translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+
+.card-habilidad:hover img {
+  transform: translateZ(30px);
+}
+
+/* Colores distintos para cada tarjeta */
+.card1 { background: linear-gradient(135deg, #ff9f43, #ff6b6b); }
+.card2 { background: linear-gradient(135deg, #0abde3, #54a0ff); }
+.card3 { background: linear-gradient(135deg, #00d2d3, #1dd1a1); }
+.card4 { background: linear-gradient(135deg, #f368e0, #ff9ff3); }
+.card5 { background: linear-gradient(135deg, #5f27cd, #341f97); }
+
+/* Título sección */
+#habilidades h2 {
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Exo', sans-serif;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #2d3436;
+}
+
+
+
+
+
+
+.concepto h2 {
+  color: #007bff;
+  margin-bottom: 15px;
+  border-left: 6px solid #00c6ff;
+  padding-left: 10px;
+}
+
+.concepto p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.concepto ul {
+  list-style: "💡 ";
+  padding-left: 20px;
+  line-height: 1.8;
+}
+
+/* --- HERRAMIENTAS --- */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.tool {
+  background: linear-gradient(135deg, #00c6ff, #007bff);
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.tool:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(135deg, #007bff, #00e5ff);
+}
+
+/* --- CONTACTO --- */
+.contacto {
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+}
+
+.btn-contacto {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 25px;
+  background: white;
+  color: #007bff;
+  font-weight: 600;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-contacto:hover {
+  background: #00c6ff;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* --- FOOTER --- */
+footer {
+  background: #007bff;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+}
+.tools-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 30px;
+  perspective: 900px; /* Igual que las cards de habilidades */
+}
+
+.tool-card {
+  width: 200px;
+  height: 250px;
+  background: linear-gradient(135deg, #ff9f43, #ee5253);
+  border-radius: 15px;
+  text-align: center;
+  padding: 15px;
+  color: #fff;
+  font-family: 'Abel', sans-serif;
+  box-shadow: 0px 20px 60px rgba(0,0,0,0.5);
+  transition: transform 0.6s, box-shadow 0.6s;
+  transform: rotateX(75deg) translateY(-50px) translateZ(-50px); /* Efecto inicial */
+}
+
+.tool-card img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.tool-card:hover {
+  transform: rotateX(0deg) translateY(0) translateZ(0); /* Endereza la tarjeta */
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.3);
+}
+.tools-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+/* Cards básicas con efecto 3D */
+.tool-card {
+  width: 200px;
+  height: 250px;
+  background: linear-gradient(135deg, #ff9f43, #ee5253);
+  border-radius: 15px;
+  text-align: center;
+  padding: 15px;
+  color: #fff;
+  font-family: 'Abel', sans-serif;
+  box-shadow: 0px 20px 60px rgba(0,0,0,0.5);
+  transition: transform 0.6s, box-shadow 0.6s;
+  transform: rotateX(75deg) translateY(-50px) translateZ(-50px); 
+}
+
+.tool-card:hover {
+  transform: rotateX(0deg) translateY(0) translateZ(0); 
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.3);
+}
+
+/* Efecto tipo iconos de redes sociales aplicado a las imágenes */
+.tool-card a {
+  display: block;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  border: 3px solid #fff;
+}
+
+.tool-card a .icon {
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+  transform-origin: center;
+}
+
+.tool-card a:hover .icon {
+  transform: rotateY(360deg);
+}
+
+.tool-card a::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f00; /* Cambia según quieras colores distintos */
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.tool-card a:hover::before {
+  top: 0;
+  z-index: -1;
+}
+
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  align-items: center;
+}
+
+.tool {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  font-size: 14px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: 3px solid #fff;
+  transition: transform 0.5s;
+}
+
+.tool img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+  transition: transform 0.5s;
+}
+
+.tool:hover img {
+  transform: rotateY(360deg);
+}
+
+.tool::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f00;
+  transition: top 0.5s;
+  z-index: 1;
+  border-radius: 15px;
+}
+
+.tool:hover::before {
+  top: 0;
+}
+
+/* Colores de fondo para cada herramienta */
+.tool:nth-child(1)::before { background: #31a8ff; } /* Photoshop */
+.tool:nth-child(2)::before { background: #ff9a00; } /* Illustrator */
+.tool:nth-child(3)::before { background: #ff61f6; } /* After Effects */
+.tool:nth-child(4)::before { background: #ff0000; } /* Premiere Pro */
+.tool:nth-child(5)::before { background: #f5792a; } /* Blender */
+.tool:nth-child(6)::before { background: #f24e1e; } /* Figma */
+.tool:nth-child(7)::before { background: #00c4cc; } /* Canva */
+.tool:nth-child(8)::before { background: #00c8ff; } /* CapCut */
+.tool:nth-child(9)::before { background: #00171f; } /* DaVinci Resolve */
+
+.tool:hover {
+  transform: scale(1.1);
+}
